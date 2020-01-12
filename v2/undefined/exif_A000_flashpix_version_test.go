@@ -36,7 +36,7 @@ func TestCodecA000FlashpixVersion_Encode(t *testing.T) {
 
 		t.Fatalf("Encoding not correct.")
 	} else if unitCount != uint32(len(encoded)) {
-		t.Fatalf("Unit-couunt not correct: (%d)", unitCount)
+		t.Fatalf("Unit-count not correct: (%d)", unitCount)
 	}
 }
 
