@@ -21,6 +21,13 @@ const (
 	// May be omitted even if DateTimeOriginal is included if the camera doesn't have the capability to determine this.
 	ExifOffsetTimeOriginal = 0x9011
 
+	// Rational. The lens aperture. The unit is the APEX value.
+	ExifApertureValue = 0x9202
+	// Rational. Shutter speed. The unit is the APEX (Additive System of Photographic Exposure) setting.
+	ExifShutterSpeedValue = 0x9201
+	// Short. Indicates the ISO Speed and ISO Latitude of the camera or input device as specified in ISO 12232.
+	ExifISOSpeedRatings = 0x8827
+
 	// Backwards-Compatible Exif Tags ///////////
 	// https://exiftool.org/TagNames/EXIF.html //
 	/////////////////////////////////////////////

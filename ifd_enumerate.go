@@ -1014,7 +1014,6 @@ func (ifd *Ifd) ExifInfo() (ei *ExifInfo, err error) {
 	}
 
 	// Parse Original Time Tags
-
 	dateTimeOriginalTags, foundDateTimeOriginal := ifd.EntriesByTagId[ExifDateTimeOriginal]
 	if foundDateTimeOriginal {
 
@@ -1055,26 +1054,10 @@ func (ifd *Ifd) ExifInfo() (ei *ExifInfo, err error) {
 			ei.OffsetTimeOriginal = time.Second * time.Duration(offsetInt)
 			ei.HasOffsetTimeOriginal = true
 		}
-
-		// dateParts := strings.Split(datestampValue.(string), ":")
-
-		// year, err1 := strconv.ParseUint(dateParts[0], 10, 16)
-		// month, err2 := strconv.ParseUint(dateParts[1], 10, 8)
-		// day, err3 := strconv.ParseUint(dateParts[2], 10, 8)
-
-		// if err1 == nil && err2 == nil && err3 == nil {
-		// 	timestampValue, err := ifd.TagValue(timestampTags[0])
-		// 	log.PanicIf(err)
-
-		// 	timestampRaw := timestampValue.([]Rational)
-
-		// 	hour := int(timestampRaw[0].Numerator / timestampRaw[0].Denominator)
-		// 	minute := int(timestampRaw[1].Numerator / timestampRaw[1].Denominator)
-		// 	second := int(timestampRaw[2].Numerator / timestampRaw[2].Denominator)
-
-		// 	gi.Timestamp = time.Date(int(year), time.Month(month), int(day), hour, minute, second, 0, time.UTC)
-		// }
 	}
+
+	// Parse the exposure setting tags:
+	apertureTags, 
 
 	// Look for whether North or South.
 	// tags, found = ifd.EntriesByTagId[TagLatitudeRefId]
